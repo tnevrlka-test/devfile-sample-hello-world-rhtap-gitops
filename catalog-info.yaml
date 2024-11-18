@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: devfile-sample-hello-world-rhtap-gitops
+  description: This is GitOps manifest for devfile-sample-hello-world-rhtap   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: devfile-sample-hello-world-rhtap
+    janus-idp.io/tekton: devfile-sample-hello-world-rhtap 
+    backstage.io/kubernetes-id: devfile-sample-hello-world-rhtap 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:devfile-sample-hello-world-rhtap

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: devfile-sample-hello-world-rhtap
+  janus-idp.io/tekton: devfile-sample-hello-world-rhtap
+  backstage.io/kubernetes-id: devfile-sample-hello-world-rhtap
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: devfile-sample-hello-world-rhtap
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml
